@@ -175,7 +175,7 @@ import rockstarPic015 from "./assets/PIC_015.jpeg";
 
 import rockstarVid01 from "./assets/VID_01.MOV";
 import rockstarVid03 from "./assets/VID_03.MOV";
-import rockstarVid04 from "./assets/VID_04.MOV";
+import rockstarVid04 from "./assets/VID_04.mov";
 import rockstarVid05 from "./assets/VID_05.MOV";
 import rockstarVid06 from "./assets/VID_06.MOV";
 
