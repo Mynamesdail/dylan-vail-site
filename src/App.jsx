@@ -551,11 +551,11 @@ I think about how a brand feels, behaves, and shows up across the world around i
           </div>
 
           <div className="mb-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <div className="aspect-[0.88] overflow-hidden bg-[#d9f24f] p-5 text-black">
+            <div className="aspect-[0.88] overflow-visible bg-[#d9f24f] p-5 text-black">
               <div className="flex h-full items-end">
                 <div>
                   <div className="mb-2 text-[11px] uppercase tracking-[0.2em]">focus</div>
-                  <div className="text-[clamp(1.4rem,2.6vw,2.4rem)] font-black uppercase leading-[0.9] tracking-[-0.05em]">
+                  <div className="text-[clamp(1.4rem,2.6vw,2.4rem)] font-black uppercase leading-[0.95] tracking-[-0.05em]">
                     Brand
                     <br />
                     Innovation
@@ -564,11 +564,11 @@ I think about how a brand feels, behaves, and shows up across the world around i
               </div>
             </div>
 
-            <div className="aspect-[0.88] overflow-hidden bg-[#2a2a2a] p-5">
+            <div className="aspect-[0.88] overflow-visible bg-[#2a2a2a] p-5">
               <div className="flex h-full items-end">
                 <div>
                   <div className="mb-2 text-[11px] uppercase tracking-[0.2em] text-white/70">role</div>
-                  <div className="text-[clamp(1.35rem,2.5vw,2.2rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-white">
+                  <div className="text-[clamp(1.35rem,2.5vw,2.2rem)] font-black uppercase leading-[0.95] tracking-[-0.05em] text-white">
                     Associate Brand
                     <br />
                     Design Manager
@@ -577,11 +577,11 @@ I think about how a brand feels, behaves, and shows up across the world around i
               </div>
             </div>
 
-            <div className="aspect-[0.88] overflow-hidden bg-[#36d7ff] p-5 text-black">
+            <div className="aspect-[0.88] overflow-visible bg-[#36d7ff] p-5 text-black">
               <div className="flex h-full items-end">
                 <div>
                   <div className="mb-2 text-[11px] uppercase tracking-[0.2em]">approach</div>
-                  <div className="text-[clamp(1.35rem,2.5vw,2.2rem)] font-black uppercase leading-[0.9] tracking-[-0.05em]">
+                  <div className="text-[clamp(1.35rem,2.5vw,2.2rem)] font-black uppercase leading-[0.95] tracking-[-0.05em]">
                     Strategy
                     <br />
                     into craft
@@ -590,7 +590,7 @@ I think about how a brand feels, behaves, and shows up across the world around i
               </div>
             </div>
 
-            <div className="aspect-[0.88] overflow-hidden border border-white/10 bg-[#111111] p-5">
+            <div className="aspect-[0.88] overflow-visible border border-white/10 bg-[#111111] p-5">
               <div className="flex h-full items-end">
                 <div>
                   <div className="mb-2 text-[11px] uppercase tracking-[0.2em] text-white/70">based in</div>
