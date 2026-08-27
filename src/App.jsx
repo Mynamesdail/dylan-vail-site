@@ -676,7 +676,7 @@ I think about how a brand feels, behaves, and shows up across the world around i
 }
 const ampBrandMarksAssets = {
   bwLockup: {
-    src: ampLockupBw,
+    src: ampLockupBW,
     alt: "AMP black and white core lockup",
     wrapClass: "relative flex h-[150px] w-full items-center justify-center md:h-[380px]",
     imgClass:
@@ -703,7 +703,7 @@ const ampBrandMarksAssets = {
 function AmpBrandMarksSection() {
   return (
     <section className="px-6 py-16 sm:px-8 lg:px-10">
-      <div className="mx-auto max-w-[1360px] (nothing) pt-10">
+      <div className="mx-auto max-w-[1360px] pt-0 sm:pt-10">
         <div className="mb-14 max-w-[980px]">
           <div className="mb-6 text-[11px] uppercase tracking-[0.24em] text-black/70">
             Brand Marks
@@ -1047,7 +1047,7 @@ function AmpHistorySection() {
   ];
 
   return (
-    <section className="px-6 pt-4 pb-16 sm:px-8 lg:px-10">
+    <section className="px-6 pt-4 pb-0 sm:px-8 sm:pb-16 lg:px-10">
       <div className="mx-auto max-w-[1360px] pt-0">
         <div className="mb-14 max-w-[920px]">
           <div className="mb-6 text-[11px] uppercase tracking-[0.24em] text-black/70">
@@ -1063,7 +1063,7 @@ function AmpHistorySection() {
           </p>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div className="grid grid-cols-4 gap-3 sm:gap-6 lg:gap-12">
           {timelineItems.map((item) => (
             <AmpHistoryCard
               key={item.year}
@@ -1082,11 +1082,11 @@ function AmpHistorySection() {
 function AmpHistoryCard({ year, title, can, logo }) {
   return (
     <div className="group">
-      <div className="mb-4 text-center text-[clamp(1.4rem,2vw,1.9rem)] font-black tracking-[-0.04em] text-black">
+      <div className="mb-3 text-center text-[18px] font-black tracking-[-0.04em] text-black sm:text-[24px] lg:text-[32px]">
         {year}
       </div>
 
-      <div className="group perspective-[1000px] mx-auto w-full max-w-[220px]">
+      <div className="group perspective-[1000px] mx-auto w-full max-w-[82px] sm:max-w-[150px] lg:max-w-[220px]">
   <div className="relative aspect-[0.72] w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
     <div className="absolute inset-0 flex items-center justify-center bg-black/[0.03] [backface-visibility:hidden]">
@@ -1108,10 +1108,10 @@ function AmpHistoryCard({ year, title, can, logo }) {
   </div>
 </div>
 
-<div className="mx-auto mt-6 h-px w-full max-w-[220px] bg-[#008F4C]" />
-<div className="mx-auto h-10 w-px bg-black/15" />
+<div className="mx-auto mt-4 h-px w-full max-w-[82px] bg-[#008F4C] sm:max-w-[150px] lg:max-w-[220px]" />
+<div className="mx-auto h-6 w-px bg-black/15 sm:h-8 lg:h-10" />
 
-<p className="mx-auto max-w-[220px] text-center text-[0.95rem] leading-[1.35] tracking-[-0.01em] text-black/45">
+<p className="mx-auto max-w-[82px] text-center text-[9px] leading-tight tracking-[-0.01em] text-black/45 sm:max-w-[150px] sm:text-[12px] lg:max-w-[220px] lg:text-[0.95rem]">
   {title}
 </p>
     </div>
@@ -1143,7 +1143,7 @@ function AmpColorArchitectureHoverSection() {
   ];
 
   return (
-    <section className="px-6 py-16 sm:px-8 lg:px-10">
+    <section className="px-6 pt-6 pb-16 sm:px-8 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-[1360px] pt-2">
         <div className="mb-14 max-w-[980px]">
           <div className="mb-6 text-[11px] uppercase tracking-[0.24em] text-black/70">
@@ -1234,7 +1234,7 @@ function AmpTypographySection() {
     "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz";
 
   return (
-    <section className="px-6 py-16 sm:px-8 lg:px-10">
+    <section className="px-6 pt-0 pb-16 sm:px-8 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-[1360px] pt-10">
         <div className="mb-16 max-w-[980px]">
           <div className="mb-6 text-[11px] uppercase tracking-[0.24em] text-black/70">
