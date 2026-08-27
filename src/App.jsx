@@ -371,9 +371,9 @@ function HomePage() {
             <div className="text-[clamp(1.25rem,3vw,2.4rem)] font-bold uppercase leading-[0.9] tracking-[-0.04em]">
               Brand Design
                <br />
-              Associate Manager
+              Manager
               <br />
-              + Brand Builder
+              + World Builder
             </div>
           </div>
         </div>
