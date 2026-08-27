@@ -2856,7 +2856,7 @@ export default function DylanVailPortfolio() {
   return (
     <div className="min-h-screen bg-white text-black">
       <header className="fixed inset-x-0 top-0 z-50 bg-white">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <button
             type="button"
             onClick={goHome}
@@ -2865,7 +2865,7 @@ export default function DylanVailPortfolio() {
             Dylan Vail
           </button>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="flex items-center gap-4 sm:gap-6 md:gap-8">
             {nav.map((item) => {
               const onClick =
                 item.page === "work"
@@ -2881,7 +2881,7 @@ export default function DylanVailPortfolio() {
                   key={item.label}
                   type="button"
                   onClick={onClick}
-                  className="text-[11px] uppercase tracking-[0.2em] hover:opacity-60"
+                  className="text-[9px] uppercase tracking-[0.16em] hover:opacity-60 sm:text-[11px] sm:tracking-[0.2em]"
                 >
                   {item.label}
                 </button>
