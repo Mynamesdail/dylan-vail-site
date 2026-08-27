@@ -676,27 +676,27 @@ I think about how a brand feels, behaves, and shows up across the world around i
 }
 const ampBrandMarksAssets = {
   bwLockup: {
-    src: ampLockupBW,
+    src: ampLockupBw,
     alt: "AMP black and white core lockup",
-    wrapClass: "relative h-[380px] w-full",
+    wrapClass: "relative flex h-[150px] w-full items-center justify-center md:h-[380px]",
     imgClass:
-      "absolute left-[50%] top-[54%] h-[500px] w-auto max-w-[150%] -translate-x-1/2 -translate-y-1/2 object-contain",
+      "h-auto w-full max-w-[150px] object-contain md:max-w-[520px]",
   },
 
   greenLockup: {
     src: ampLockupG,
     alt: "AMP green lockup",
-    wrapClass: "relative h-[380px] w-full",
+    wrapClass: "relative flex h-[150px] w-full items-center justify-center md:h-[380px]",
     imgClass:
-      "absolute left-[60%] top-[54%] h-[400px] w-auto max-w-[100%] -translate-x-1/2 -translate-y-1/2 object-contain",
+      "h-auto w-full max-w-[110px] object-contain md:max-w-[360px]",
   },
 
   redLockup: {
     src: ampLockupR,
     alt: "AMP red lockup",
-    wrapClass: "relative h-[380px] w-full",
+    wrapClass: "relative flex h-[150px] w-full items-center justify-center md:h-[380px]",
     imgClass:
-      "absolute left-[50%] top-[49%] h-[400px] w-auto max-w-[100%] -translate-x-1/2 -translate-y-1/2 object-contain",
+      "h-auto w-full max-w-[110px] object-contain md:max-w-[360px]",
   },
 };
 
@@ -719,7 +719,7 @@ function AmpBrandMarksSection() {
         </div>
 
         <div className="pt-6">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr] lg:items-start">
+          <div className="grid grid-cols-3 gap-4 md:gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr] lg:items-start">
             <div className="flex flex-col items-center">
               <div className={ampBrandMarksAssets.bwLockup.wrapClass}>
                 <img
