@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ampHero from "./assets/AMP_HERO_OPENER.png";
 import muscleHero from "./assets/MM_HERO_OPENER.png";
 import loreaHero from "./assets/LOREA_HERO_OPENER.png";
@@ -224,7 +224,6 @@ const nav = [
   { label: "home", page: "home" },
   { label: "work", page: "work" },
   { label: "about", page: "about" },
-  { label: "contact", page: "home" },
 ];
 
 const skills = [
@@ -349,7 +348,41 @@ function HomeRow({ item, onClick }) {
   );
 }
 
-function HomePage() {
+function HomePage({ openProject }) {
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+const homepageProjects = [
+  {
+    title: "AMP ENERGY REBRAND",
+    image: ampHero,
+    id: "amp",
+  },
+  {
+    title: "MUSCLE MILK REBRAND",
+    image: muscleHero,
+    id: "muscle",
+  },
+  {
+    title: "LOREA BRAND DESIGN",
+    image: loreaHero,
+    id: "lorea",
+  },
+  {
+    title: "ROCKSTAR OPEN",
+    image: rockstarHero,
+    id: "rockstar",
+  },
+  {
+    title: "PEPSI X BOBBY FLAY",
+    image: bobbyHero,
+    id: "bobby",
+  },
+  {
+    title: "RILEY VAIL HAIR",
+    image: rileyHero,
+    id: "riley",
+  },
+];
   return (
     <>
       <section id="home" className="mx-auto max-w-[1400px] pt-4">
@@ -379,58 +412,87 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-10 max-w-[1400px] pb-10">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((item, i) => (
-            <motion.div
-              key={item}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="border-t border-black pt-3"
-            >
-              <div className="text-[14px] font-bold uppercase tracking-[-0.02em]">{item}</div>
-            </motion.div>
-          ))}
+      <section className="relative mx-auto mt-10 max-w-[1400px] pb-10">
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {homepageProjects.map((project, i) => (
+      <motion.button
+        key={project.id}
+        type="button"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: i * 0.05 }}
+        onMouseEnter={() => setHoveredProject(project)}
+        onMouseLeave={() => setHoveredProject(null)}
+        onClick={() => openProject(project)}
+       className="cursor-pointer border-t border-black pt-3 text-left"
+      >
+        <div className="text-[14px] font-bold uppercase tracking-[-0.02em]">
+          {project.title}
         </div>
-      </section>
+      </motion.button>
+    ))}
+  </div>
 
-      <section id="about-preview" className="mx-auto max-w-[1400px] border-t border-black py-12">
-        <div className="mb-8 text-[12px] uppercase tracking-[0.2em]">experience</div>
-        <div className="max-w-[1100px] space-y-5 text-[clamp(1rem,1.4vw,1.2rem)] leading-[1.5]">
-          <p>
-            Currently → Building packaging systems, 3D brand worlds, and launch-ready visual thinking as a Senior Designer working across innovation, brand refresh, and experiential work.
-          </p>
-          <p>
-            Previously → Designed global structural packaging and premium product stories across beverage brands while pushing deeper into creative direction and 3D innovation.
-          </p>
-          <p>
-            And Before That → Developed physical products, brand visuals, and freelance concept work with a focus on objects, storytelling, and sharp execution.
-          </p>
-        </div>
-      </section>
+  <AnimatePresence>
+  {hoveredProject && (
+    <motion.div
+      key={hoveredProject.id}
+      initial={{ opacity: 0, scale: 0.92, y: 18 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.96, y: 10 }}
+      transition={{
+        duration: 0.28,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="pointer-events-none fixed left-1/2 top-1/2 z-40 hidden w-[62vw] max-w-[980px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl bg-white shadow-2xl lg:block"
+    >
+      <img
+        src={hoveredProject.image}
+        alt={hoveredProject.title}
+        className="h-auto w-full object-cover"
+      />
+    </motion.div>
+  )}
+</AnimatePresence>
+</section>
 
-      <section id="contact" className="mx-auto max-w-[1400px] border-t border-black py-12">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <div className="mb-4 text-[12px] uppercase tracking-[0.2em]">about</div>
-            <p className="max-w-[700px] text-[clamp(1rem,1.35vw,1.15rem)] leading-[1.5]">
-              I work at the intersection of art direction, packaging, 3D systems, and experience design. My focus is making brands feel more cinematic, physical, and culturally sharp.
-            </p>
-          </div>
-          <div>
-            <div className="mb-4 text-[12px] uppercase tracking-[0.2em]">contact</div>
-            <div className="space-y-2 text-[clamp(1.1rem,1.8vw,1.6rem)] font-bold uppercase leading-[1.1] tracking-[-0.03em]">
-              <a href="mailto:hello@dylanvail.com" className="block hover:opacity-50">
-                dylansvail@gmail.com
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="block hover:opacity-50">
-                @dylanvail
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+<section id="about-preview" className="mx-auto max-w-[1400px] border-t border-black py-12">
+  <div className="mb-8 text-[12px] uppercase tracking-[0.2em]">experience</div>
+  <div className="max-w-[1100px] space-y-5 text-[clamp(1rem,1.4vw,1.2rem)] leading-[1.5]">
+    <p>
+      Currently → Building brand systems, visual identities, packaging expression, and launch-ready brand worlds as a Brand Design Manager working across innovation, strategy, art direction, and experiential storytelling.
+    </p>
+    <p>
+      Previously → Designed global structural packaging and premium product stories across beverage brands while pushing deeper into creative direction and 3D innovation.
+    </p>
+    <p>
+      And Before That → Developed physical products, brand visuals, and freelance concept work with a focus on objects, storytelling, and sharp execution.
+    </p>
+  </div>
+</section>
+
+<section id="contact" className="mx-auto max-w-[1400px] border-t border-black py-12">
+  <div className="grid gap-10 lg:grid-cols-2">
+    <div>
+      <div className="mb-4 text-[12px] uppercase tracking-[0.2em]">about</div>
+      <p className="max-w-[700px] text-[clamp(1rem,1.35vw,1.15rem)] leading-[1.5]">
+        I work at the intersection of art direction, packaging, 3D systems, and experience design. My focus is making brands feel more cinematic, physical, and culturally connected.
+      </p>
+    </div>
+
+    <div>
+      <div className="mb-4 text-[12px] uppercase tracking-[0.2em]">contact</div>
+      <div className="space-y-2 text-[clamp(1.1rem,1.8vw,1.6rem)] font-bold uppercase leading-[1.1] tracking-[-0.03em]">
+        <a href="mailto:hello@dylanvail.com" className="block hover:opacity-50">
+          dylansvail@gmail.com
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="block hover:opacity-50">
+          @dylanvail
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 }
@@ -2906,7 +2968,7 @@ export default function DylanVailPortfolio() {
       />
     )
   ) : currentPage === "home" ? (
-    <HomePage />
+<HomePage openProject={openProject} />
   ) : currentPage === "about" ? (
     <AboutPage />
   ) : (
